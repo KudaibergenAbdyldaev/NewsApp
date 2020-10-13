@@ -1,119 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    android:id="@+id/frame_layout"
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/img"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"/>
-
-        <ImageView
-            android:id="@+id/shadow_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_alignBottom="@id/img"
-            android:src="@drawable/bottom_shadow" />
-
-        <TextView
-            android:id="@+id/author"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:drawablePadding="10dp"
-            android:ellipsize="end"
-            android:text="Author"
-            android:gravity="bottom"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="160dp"
-            android:layout_marginBottom="10dp"
-            android:maxLines="1"
-            android:layout_below="@id/desc"
-            android:layout_alignLeft="@id/title"
-            android:layout_alignStart="@id/title"/>
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
         <FrameLayout
-            android:id="@+id/layoutDate"
-            android:layout_width="wrap_content"
+            android:id="@+id/frame_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/round_white"
-            android:padding="5dp"
-            android:layout_alignParentRight="true"
+            android:orientation="vertical">
 
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="150dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <ImageView
-                android:src="@drawable/ic_date"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"/>
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="18dp"
-                android:textColor="#606060"
-                android:id="@+id/publishedAt"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="25dp"
-                android:text="01 January 2019"/>
+                <ImageView
+                    android:id="@+id/shadow_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_alignBottom="@id/img"
+                    android:src="@drawable/bottom_shadow" />
+
+                <TextView
+                    android:id="@+id/author"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/desc"
+                    android:layout_alignStart="@id/title"
+                    android:layout_alignLeft="@id/title"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="160dp"
+                    android:layout_marginBottom="10dp"
+                    android:drawablePadding="10dp"
+                    android:ellipsize="end"
+                    android:gravity="bottom"
+                    android:maxLines="1"
+                    android:text="Author" />
+
+                <FrameLayout
+                    android:id="@+id/layoutDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="150dp"
+                    android:layout_marginRight="20dp"
+
+                    android:background="@drawable/round_white"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/ic_date" />
+
+                    <TextView
+                        android:id="@+id/publishedAt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="10dp"
+                        android:text="01 January 2019"
+                        android:textColor="#606060" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Title"
+                    android:textColor="@color/colorTextTitle"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/title"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="16dp"
+                    android:text="Desc" />
+
+                <TextView
+                    android:id="@+id/content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/author"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="16dp"
+                    android:text="Content" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@+id/content"
+                    android:background="@drawable/btn_bg"
+                    android:text="More Information"
+                    android:textColor="#fff" />
+
+            </RelativeLayout>
 
         </FrameLayout>
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
-            android:textStyle="bold"
-            android:textColor="@color/colorTextTitle"
-            android:layout_marginRight="16dp"
-            android:layout_marginLeft="16dp"
-            android:text="Title"
-            android:textSize="17sp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/img"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:id="@+id/desc"
-            android:layout_below="@id/title"
-            android:text="Desc"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="16dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/content"
-            android:layout_below="@id/author"
-            android:text="Content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="16dp"/>
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="More Information"
-            android:layout_margin="10dp"
-            android:textColor="#fff"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/btn_bg"
-            android:layout_centerHorizontal="true"/>
-
-    </RelativeLayout>
-
-</FrameLayout>
+</ScrollView>
+</LinearLayout>
